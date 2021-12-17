@@ -1,4 +1,4 @@
-// https://github.com/MoongStory/DebugView
+// https://github.com/MoongStory/TimeCheck
 
 // FIXME: TIME_CHECK class repository ºÐ¸®???
 
