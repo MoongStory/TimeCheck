@@ -1,6 +1,6 @@
 // https://github.com/MoongStory/TimeCheck
 
-// FIXME: TIME_CHECK class repository 분리???
+// TODO: char, wchar_t 자료형 CString으로 변경.
 
 #if _MSC_VER > 1000
 	#pragma once
