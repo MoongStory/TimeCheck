@@ -1,6 +1,7 @@
 // https://github.com/MoongStory/TimeCheck
 
 // TODO: char, wchar_t 자료형 CString으로 변경.
+// TODO: getter, setter 추가.
 
 #if _MSC_VER > 1000
 	#pragma once
