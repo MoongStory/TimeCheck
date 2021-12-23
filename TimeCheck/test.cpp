@@ -4,16 +4,16 @@
 #include "TimeCheck.h"
 
 const char* const timeDelimiter = "[4444 TIME_CHECK]";
-const char* const wTimeDelimiter = "[4444 TIME_CHECK]";
+const wchar_t* const wTimeDelimiter = L"[4444 TIME_CHECK]";
 
 int main()
 {
-	//TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, "IntervalCheckTest 함수 시간 체크");
-	//TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, __func__);
+	//MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, "IntervalCheckTest 함수 시간 체크");
+	//MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, __func__);
 	MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, __FUNCTION__);
-	//TIME_CHECK::TimeCheck intervalTestWithDesc(wTimeDelimiter, __func__);
+	//MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(wTimeDelimiter, __func__);
 
-	//TIME_CHECK::TimeCheck intervalTest(timeDelimiter);
+	//MOONG::TIME_CHECK::TimeCheck intervalTest(timeDelimiter);
 	MOONG::TIME_CHECK::TimeCheck intervalTest(wTimeDelimiter);
 
 	Sleep(3000);
