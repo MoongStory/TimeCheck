@@ -1,7 +1,7 @@
 #include "TimeCheck.h"
 
 #include <Windows.h>
-#include <iostream>
+#include <atlstr.h>
 #include <strsafe.h>
 
 MOONG::TIME_CHECK::TimeCheck::TimeCheck(const char* const delimiter, const char* const description) :
@@ -114,13 +114,13 @@ void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...)
 {
 	va_list ap;
 	char buf[kMaxBufSize] = { 0 };
-	char debugString[kMaxBufSize] = { 0 };
 
 	va_start(ap, format);
 	StringCchVPrintfA(buf, kMaxBufSize, format, ap);
 	va_end(ap);
 
-	StringCchPrintfA(debugString, kMaxBufSize, "%s %s\n", this->delimiter_, buf);
+	CStringA debug_string;
+	debug_string.Format("%s %s", this->delimiter_, buf);
 
-	OutputDebugStringA(debugString);
+	OutputDebugStringA(debug_string.GetBuffer());
 }
