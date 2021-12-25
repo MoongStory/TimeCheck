@@ -57,7 +57,7 @@ MOONG::TIME_CHECK::TimeCheck::~TimeCheck()
 
 
 
-void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...)
+void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...) const
 {
 	va_list ap;
 	char buf[kMaxBufSize] = { 0 };
@@ -72,7 +72,7 @@ void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...)
 	OutputDebugStringA(debug_string.GetBuffer());
 }
 
-CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter()
+CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter() const
 {
 	return this->delimiter_;
 }
@@ -82,7 +82,7 @@ void MOONG::TIME_CHECK::TimeCheck::Set_delimiter(CStringA delimiter)
 	this->delimiter_ = delimiter;
 }
 
-CStringA MOONG::TIME_CHECK::TimeCheck::Get_description()
+CStringA MOONG::TIME_CHECK::TimeCheck::Get_description() const
 {
 	return this->description_;
 }

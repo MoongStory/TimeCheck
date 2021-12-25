@@ -26,12 +26,12 @@ namespace MOONG
 			~TimeCheck();
 
 		private:
-			void Print(const char* const format, ...);
+			void Print(const char* const format, ...) const;
 
-			CStringA Get_delimiter();
+			CStringA Get_delimiter() const;
 			void Set_delimiter(CStringA delimiter);
 
-			CStringA Get_description();
+			CStringA Get_description() const;
 			void Set_description(CStringA description);
 
 		private:
