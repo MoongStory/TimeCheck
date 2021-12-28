@@ -4,7 +4,7 @@
 #include <atlstr.h>
 #include <strsafe.h>
 
-MOONG::TIME_CHECK::TimeCheck::TimeCheck(CStringA delimiter, CStringA description) :
+MOONG::TIME_CHECK::TimeCheck::TimeCheck(const CStringA delimiter, const CStringA description) :
 	delimiter_(""),
 	description_(""),
 	start_(0),
@@ -72,22 +72,22 @@ void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...) const
 	OutputDebugStringA(debug_string.GetBuffer());
 }
 
-CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter() const
+const CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter() const
 {
 	return this->delimiter_;
 }
 
-void MOONG::TIME_CHECK::TimeCheck::Set_delimiter(CStringA delimiter)
+void MOONG::TIME_CHECK::TimeCheck::Set_delimiter(const CStringA delimiter)
 {
 	this->delimiter_ = delimiter;
 }
 
-CStringA MOONG::TIME_CHECK::TimeCheck::Get_description() const
+const CStringA MOONG::TIME_CHECK::TimeCheck::Get_description() const
 {
 	return this->description_;
 }
 
-void MOONG::TIME_CHECK::TimeCheck::Set_description(CStringA description)
+void MOONG::TIME_CHECK::TimeCheck::Set_description(const CStringA description)
 {
 	this->description_ = description;
 }

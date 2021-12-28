@@ -22,17 +22,17 @@ namespace MOONG
 		class TimeCheck
 		{
 		public:	/* 持失切 & 社瑚切 */
-			TimeCheck(CStringA delimiter, CStringA description = "");
+			TimeCheck(const CStringA delimiter, const CStringA description = "");
 			~TimeCheck();
 
 		private:
 			void Print(const char* const format, ...) const;
 
-			CStringA Get_delimiter() const;
-			void Set_delimiter(CStringA delimiter);
+			const CStringA Get_delimiter() const;
+			void Set_delimiter(const CStringA delimiter);
 
-			CStringA Get_description() const;
-			void Set_description(CStringA description);
+			const CStringA Get_description() const;
+			void Set_description(const CStringA description);
 
 		private:
 			CStringA delimiter_;
