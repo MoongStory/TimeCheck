@@ -67,9 +67,9 @@ void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...) const
 	va_end(ap);
 
 	CStringA debug_string;
-	debug_string.Format("%s %s", this->delimiter_, buf);
+	debug_string.Format("%s %s", this->delimiter_.GetString(), buf);
 
-	OutputDebugStringA(debug_string.GetBuffer());
+	OutputDebugStringA(debug_string.GetString());
 }
 
 const CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter() const
