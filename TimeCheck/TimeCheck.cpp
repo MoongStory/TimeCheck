@@ -1,22 +1,21 @@
 #include "TimeCheck.h"
 
 #include <Windows.h>
-#include <atlstr.h>
 #include <strsafe.h>
 
-MOONG::TIME_CHECK::TimeCheck::TimeCheck(const CStringA delimiter, const CStringA description) :
+MOONG::TIME_CHECK::TimeCheck::TimeCheck(const std::string delimiter, const std::string description) :
 	delimiter_(""),
 	description_(""),
 	start_(0),
 	end_(0)
 {
-	if (delimiter.IsEmpty())
+	if (delimiter.empty())
 	{
-		this->Set_delimiter("[MOONG_TIME_CHECK]");
+		this->setDelimiter("[MOONG_TIME_CHECK]");
 	}
 	else
 	{
-		this->Set_delimiter(delimiter);
+		this->setDelimiter(delimiter);
 	}
 
 	start_ = time(NULL);
@@ -24,11 +23,11 @@ MOONG::TIME_CHECK::TimeCheck::TimeCheck(const CStringA delimiter, const CStringA
 	struct tm current_time;
 	localtime_s(&current_time, &start_);
 
-	if (!description.IsEmpty())
+	if (!description.empty())
 	{
-		this->Set_description(description);
+		this->setDescription(description);
 
-		this->Print("시작 시간[%02d시 %02d분 %02d초] %s", current_time.tm_hour, current_time.tm_min, current_time.tm_sec, this->Get_description());
+		this->Print("시작 시간[%02d시 %02d분 %02d초] %s", current_time.tm_hour, current_time.tm_min, current_time.tm_sec, this->getDescription().c_str());
 	}
 	else
 	{
@@ -45,13 +44,13 @@ MOONG::TIME_CHECK::TimeCheck::~TimeCheck()
 	struct tm current_time;
 	localtime_s(&current_time, &end_);
 
-	if(this->Get_description().IsEmpty())
+	if(this->getDescription().empty())
 	{
 		this->Print("종료 시간[%02d시 %02d분 %02d초] (%.3lf (Sec) 소요)", current_time.tm_hour, current_time.tm_min, current_time.tm_sec, (double)(this->end_ - this->start_));
 	}
 	else
 	{
-		this->Print("종료 시간[%02d시 %02d분 %02d초] %s (%.3lf (Sec) 소요)", current_time.tm_hour, current_time.tm_min, current_time.tm_sec, this->description_, (double)(this->end_ - this->start_));
+		this->Print("종료 시간[%02d시 %02d분 %02d초] %s (%.3lf (Sec) 소요)", current_time.tm_hour, current_time.tm_min, current_time.tm_sec, this->getDescription().c_str(), (double)(this->end_ - this->start_));
 	}
 }
 
@@ -66,28 +65,29 @@ void MOONG::TIME_CHECK::TimeCheck::Print(const char* const format, ...) const
 	StringCchVPrintfA(buf, kMaxBufSize, format, ap);
 	va_end(ap);
 
-	CStringA debug_string;
-	debug_string.Format("%s %s", this->delimiter_.GetString(), buf);
+	std::string debug_string(this->delimiter_);
+	debug_string += " ";
+	debug_string += buf;
 
-	OutputDebugStringA(debug_string.GetString());
+	OutputDebugStringA(debug_string.c_str());
 }
 
-const CStringA MOONG::TIME_CHECK::TimeCheck::Get_delimiter() const
+const std::string MOONG::TIME_CHECK::TimeCheck::getDelimiter() const
 {
 	return this->delimiter_;
 }
 
-void MOONG::TIME_CHECK::TimeCheck::Set_delimiter(const CStringA delimiter)
+void MOONG::TIME_CHECK::TimeCheck::setDelimiter(const std::string delimiter)
 {
 	this->delimiter_ = delimiter;
 }
 
-const CStringA MOONG::TIME_CHECK::TimeCheck::Get_description() const
+const std::string MOONG::TIME_CHECK::TimeCheck::getDescription() const
 {
 	return this->description_;
 }
 
-void MOONG::TIME_CHECK::TimeCheck::Set_description(const CStringA description)
+void MOONG::TIME_CHECK::TimeCheck::setDescription(const std::string description)
 {
 	this->description_ = description;
 }

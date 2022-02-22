@@ -3,8 +3,8 @@
 
 #include "TimeCheck.h"
 
-const char* const timeDelimiter = "[4444 TIME_CHECK]";
-const wchar_t* const wTimeDelimiter = L"[4444 TIME_CHECK]";
+const char* const timeDelimiter = "[MOONG_DEBUG TIME_CHECK]";
+const wchar_t* const wTimeDelimiter = L"[MOONG_DEBUG TIME_CHECK]";
 
 int main()
 {
@@ -13,8 +13,8 @@ int main()
 	MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(timeDelimiter, __FUNCTION__);
 	//MOONG::TIME_CHECK::TimeCheck intervalTestWithDesc(wTimeDelimiter, __func__);
 
-	//MOONG::TIME_CHECK::TimeCheck intervalTest(timeDelimiter);
-	MOONG::TIME_CHECK::TimeCheck intervalTest(wTimeDelimiter);
+	MOONG::TIME_CHECK::TimeCheck intervalTest(timeDelimiter);
+	//MOONG::TIME_CHECK::TimeCheck intervalTest(wTimeDelimiter);
 
 	Sleep(3000);
 

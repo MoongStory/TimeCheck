@@ -11,7 +11,7 @@
 #define _TIME_CHECK_H_
 
 #include <ctime>
-#include <atlstr.h>
+#include <iostream>
 
 namespace MOONG
 {
@@ -22,21 +22,21 @@ namespace MOONG
 		class TimeCheck
 		{
 		public:	/* 持失切 & 社瑚切 */
-			TimeCheck(const CStringA delimiter, const CStringA description = "");
+			TimeCheck(const std::string delimiter, const std::string description = "");
 			~TimeCheck();
 
 		private:
 			void Print(const char* const format, ...) const;
 
-			const CStringA Get_delimiter() const;
-			void Set_delimiter(const CStringA delimiter);
+			const std::string getDelimiter() const;
+			void setDelimiter(const std::string delimiter);
 
-			const CStringA Get_description() const;
-			void Set_description(const CStringA description);
+			const std::string getDescription() const;
+			void setDescription(const std::string description);
 
 		private:
-			CStringA delimiter_;
-			CStringA description_;
+			std::string delimiter_;
+			std::string description_;
 			time_t start_, end_;
 		};
 	}
