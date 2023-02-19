@@ -26,16 +26,10 @@ namespace MOONG
 			~TimeCheck();
 
 		private:
-			void Print(const char* const format, ...) const;
-
-			const std::string getDelimiter() const;
-			void setDelimiter(const std::string delimiter);
-
 			const std::string getDescription() const;
 			void setDescription(const std::string description);
 
 		private:
-			std::string delimiter_;
 			std::string description_;
 			time_t start_, end_;
 		};
