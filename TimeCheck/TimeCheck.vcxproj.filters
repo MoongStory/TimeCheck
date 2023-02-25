@@ -33,6 +33,9 @@
     <ClCompile Include="..\..\StringTool\StringTool\StringTool.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Time\Time\Time.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TimeCheck.h">
@@ -45,6 +48,9 @@
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\StringTool\StringTool\StringTool.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Time\Time\Time.h">
       <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
