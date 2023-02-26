@@ -16,7 +16,7 @@ int main()
 	MOONG::TIME_CHECK::TimeCheck intervalTest(timeDelimiter);
 	//MOONG::TIME_CHECK::TimeCheck intervalTest(wTimeDelimiter);
 
-	Sleep(3000);
+	Sleep(1000);
 
 	return EXIT_SUCCESS;
 }

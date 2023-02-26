@@ -1,8 +1,5 @@
 // https://github.com/MoongStory/TimeCheck
 
-// TODO: char, wchar_t 자료형 string, wstring으로 변경.
-// TODO: getter, setter 추가.
-
 #if _MSC_VER > 1000
 	#pragma once
 #endif
@@ -10,7 +7,7 @@
 #ifndef _TIME_CHECK_H_
 #define _TIME_CHECK_H_
 
-#include <ctime>
+#include <wtypes.h>
 #include <iostream>
 
 namespace MOONG
@@ -31,7 +28,7 @@ namespace MOONG
 
 		private:
 			std::string description_;
-			time_t start_, end_;
+			SYSTEMTIME start_, end_;
 		};
 	}
 }
