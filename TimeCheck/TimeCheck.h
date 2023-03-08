@@ -47,8 +47,8 @@ namespace MOONG
 			~TimeCheck();
 
 		private:
-			const std::string getDescription() const;
-			void setDescription(const std::string description);
+			const std::string get_description() const;
+			void set_description(const std::string description);
 
 		private:
 			std::string description_;
